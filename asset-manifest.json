@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/clothing-game/static/css/main.09ae24e3.css",
-    "main.js": "/clothing-game/static/js/main.8941845f.js",
+    "main.js": "/clothing-game/static/js/main.8bce0fb1.js",
     "static/js/714.7012b3c1.chunk.js": "/clothing-game/static/js/714.7012b3c1.chunk.js",
     "static/media/shirt.png": "/clothing-game/static/media/shirt.d68a337161a8aea9387e.png",
     "static/media/mannequin.png": "/clothing-game/static/media/mannequin.e4488d3ee2ddef5ea5d9.png",
     "static/media/hair.png": "/clothing-game/static/media/hair.546b95c370967fc23261.png",
     "index.html": "/clothing-game/index.html",
     "main.09ae24e3.css.map": "/clothing-game/static/css/main.09ae24e3.css.map",
-    "main.8941845f.js.map": "/clothing-game/static/js/main.8941845f.js.map",
+    "main.8bce0fb1.js.map": "/clothing-game/static/js/main.8bce0fb1.js.map",
     "714.7012b3c1.chunk.js.map": "/clothing-game/static/js/714.7012b3c1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.09ae24e3.css",
-    "static/js/main.8941845f.js"
+    "static/js/main.8bce0fb1.js"
   ]
 }
