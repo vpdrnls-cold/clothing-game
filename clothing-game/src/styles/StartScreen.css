@@ -6,7 +6,6 @@
   height: 100vh;
   background-color: #f5f5f5;
   font-family: Arial, sans-serif;
-  text-align: center; /* 텍스트 중앙 정렬 */
 }
 
 .start-screen h1 {
@@ -15,17 +14,15 @@
   margin-bottom: 20px;
 }
 
-.start-screen .nickname-input {
-  margin-bottom: 30px; /* 버튼과 간격 설정 */
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 300px;
-  text-align: center; /* 입력 텍스트 중앙 정렬 */
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
-.start-screen .start-game-button {
+.signup-button,
+.login-button,
+.explore-button {
   padding: 10px 20px;
   font-size: 1.2rem;
   color: white;
@@ -36,8 +33,18 @@
   transition: background-color 0.3s ease;
 }
 
-.start-screen .start-game-button:hover {
+.signup-button:hover,
+.login-button:hover,
+.explore-button:hover {
   background-color: #0056b3;
+}
+
+.signup-form,
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .nickname-input {
@@ -46,28 +53,25 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 300px;
-  text-align: center;
   margin-bottom: 20px;
 }
 
-.button-group {
-  display: flex;
-  gap: 10px; /* 버튼 간 간격 */
-}
-
-.explore-button,
 .start-game-button {
   padding: 10px 20px;
   font-size: 1.2rem;
   color: white;
-  background-color: #007bff;
+  background-color: #28a745;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.explore-button:hover,
 .start-game-button:hover {
-  background-color: #0056b3;
+  background-color: #218838;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
 }
