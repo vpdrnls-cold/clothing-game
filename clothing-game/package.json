@@ -4,11 +4,14 @@
   "private": true,
   "homepage": "https://vpdrnls-cold.github.io/clothing-game",
   "dependencies": {
+    "gh-pages": "^5.0.0",
     "cra-template": "1.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-scripts": "5.0.1"
   },
+
+  
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
