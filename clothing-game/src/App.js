@@ -1,16 +1,14 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import StartScreen from './screens/StartScreen';
 import GameScreen from './screens/GameScreen';
 
 function App() {
   return (
-    
-      <Routes>
-        <Route path="/" element={<StartScreen />} />
-        <Route path="/game" element={<GameScreen />} />
-      </Routes>
-    
+    <Routes>
+      <Route path="/" element={<StartScreen />} />
+      <Route path="/game" element={<GameScreen />} />
+    </Routes>
   );
 }
 
