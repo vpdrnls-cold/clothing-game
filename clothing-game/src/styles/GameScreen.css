@@ -10,18 +10,50 @@
   position: relative;
   width: 300px;
   height: 600px;
-  margin: 0 auto;
+  margin: 0 auto; /* 두 화면에서 동일한 중앙 정렬 */
+  padding: 0; /* 추가 여백 제거 */
+}
+
+.item {
+  position: absolute;
+  width: 80px;
+  height: auto;
+  top: 0; /* 위치 초기화 */
+  left: 0;
 }
 
 .mannequin {
   width: 100%;
   height: auto;
-  display: block;
 }
 
-.item {
-  width: 80px;
-  height: auto;
-  cursor: grab;
-  z-index: 2;
+/* Reset 버튼 스타일 */
+.reset-button,
+.save-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
 }
+
+.reset-button{
+  right: 100px;
+}
+
+.save-button {
+  right: 10px;
+}
+
+.reset-button:hover,
+.save-button:hover {
+  background-color: #0056b3;
+}
+

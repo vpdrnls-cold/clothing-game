@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../styles/StartScreen.css';
+
 
 export default function StartScreen() {
   const navigate = useNavigate();
@@ -29,7 +31,7 @@ export default function StartScreen() {
       navigate('/game'); // 게임 화면으로 이동
     } catch (err) {
       console.error(err);
-      setError('서버 오류로 닉네임을 저장할 수 없습니다.');
+      setError('이미 존재하는 닉네임입니다.');
     }
   };
 
