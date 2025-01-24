@@ -9,7 +9,11 @@ const app = express();
 const PORT = 3001;
 
 // 미들웨어 설정
-app.use(cors());
+app.use(cors({
+  origin: '*', // 특정 도메인을 지정할 수도 있습니다.
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 app.use(express.json()); // JSON 파싱 미들웨어
 app.use(bodyParser.urlencoded({ extended: true }));
 
