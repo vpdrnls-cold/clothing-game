@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/StartScreen.css';
 
-
 export default function StartScreen() {
   const navigate = useNavigate();
   const [mode, setMode] = useState(''); // 가입 또는 로그인 모드
   const [nickname, setNickname] = useState('');
   const [error, setError] = useState('');
+
+  // 환경 변수로 API URL 설정
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:3001';
 
   const handleSignup = async () => {
     if (!nickname.trim()) {
@@ -16,14 +18,15 @@ export default function StartScreen() {
     }
 
     try {
-      const response = await fetch('http://localhost:3001/api/signup', {
+      const response = await fetch(`${API_BASE_URL}/api/signup`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ nickname }),
       });
 
       if (!response.ok) {
-        throw new Error('닉네임 저장 실패');
+        const errorData = await response.json();
+        throw new Error(errorData.message || '닉네임 저장 실패');
       }
 
       const data = await response.json();
@@ -31,7 +34,7 @@ export default function StartScreen() {
       navigate('/game'); // 게임 화면으로 이동
     } catch (err) {
       console.error(err);
-      setError('이미 존재하는 닉네임입니다.');
+      setError(err.message || '서버 오류가 발생했습니다.');
     }
   };
 
@@ -42,27 +45,26 @@ export default function StartScreen() {
     }
 
     try {
-      const response = await fetch('http://localhost:3001/api/login', {
+      const response = await fetch(`${API_BASE_URL}/api/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ nickname }),
       });
 
-      
-
       if (response.status === 404) {
-        alert('가입하기를 통해 닉네임을 생성하세요.');
+        setError('가입하기를 통해 닉네임을 생성하세요.');
         return;
       }
 
       if (!response.ok) {
-        throw new Error('로그인 실패');
+        const errorData = await response.json();
+        throw new Error(errorData.message || '로그인 실패');
       }
 
       navigate('/game'); // 게임 화면으로 이동
     } catch (err) {
       console.error(err);
-      setError('서버 오류로 로그인할 수 없습니다.');
+      setError(err.message || '서버 오류로 로그인할 수 없습니다.');
     }
   };
 
